@@ -10,18 +10,13 @@ import Paper from "@mui/material/Paper";
 import PropTypes from "prop-types";
 import { worldLanguages } from "../utils/languages";
 
-export const LanguageSelection = ({ setLanguage }) => {
-  const currentLanguage = () => localStorage.getItem("selectedLanguage");
-  const [selectedLanguage, setSelectedLanguage] = useState(currentLanguage());
+export const LanguageSelection = ({ language, setLanguage }) => {
+  const [selectedLanguage, setSelectedLanguage] = useState(undefined);
 
   const handleChange = (event) => {
-    const language = event.target.value;
-    setSelectedLanguage(language);
+    const selectedLanguage = event.target.value;
+    setSelectedLanguage(selectedLanguage);
   };
-
-  useEffect(() => {
-      localStorage.setItem("selectedLanguage", selectedLanguage.toString());
-  }, [selectedLanguage]);
 
   return (
     <Paper elevation={24} sx={{ padding:"24px"}}>                       
