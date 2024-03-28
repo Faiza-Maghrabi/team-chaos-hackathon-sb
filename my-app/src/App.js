@@ -1,14 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-import Questions from "./components/Questions";
 
+import Questions from "./components/Questions";
+import { UploadButton } from "./ButtonTemp"
+import { SelectedLanguage } from './components/SelectedLanguage';
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <Questions/>
-      </header>
-    </div>
+    <>
+    <Questions/>
+    <SelectedLanguage/>
+    <UploadButton />
+    </>
   );
 }
 
