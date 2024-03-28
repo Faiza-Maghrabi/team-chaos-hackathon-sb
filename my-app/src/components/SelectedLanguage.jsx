@@ -28,7 +28,7 @@ export const SelectedLanguage = () => {
       {language === undefined ? (
         <LanguageSelection language={ language} setLanguage={setLanguage} />
       ) : (
-        <Questions language={language} setAverage={setLanguage} />
+        <Questions language={language} setLanguage={setLanguage} />
       )}
     </Box>
   );
