@@ -4,8 +4,10 @@ import { SelectedLanguage } from './components/SelectedLanguage';
 function App() {
 
   return (
+    <>
     <SelectedLanguage/>
     <UploadButton />
+    </>
   );
 }
 
