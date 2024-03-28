@@ -27,8 +27,7 @@ export const LanguageSelection = ({ language, setLanguage }) => {
         alignItems="center"
       >
         <Typography variant="body1">
-          Select your language.
-        </Typography>
+Welcome! Please select your language:        </Typography>
         <FormControl
           sx={{
             m: 10,
@@ -52,7 +51,7 @@ export const LanguageSelection = ({ language, setLanguage }) => {
           disabled={!selectedLanguage}
           size="large"
         >
-          Start
+          Get started now!
         </Button>
       </Stack>
     </Paper>
