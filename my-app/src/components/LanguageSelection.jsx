@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 import { worldLanguages } from "../utils/languages";
 
 export const LanguageSelection = ({ setLanguage }) => {
-  const currentLanguage = () => localStorage.getItem("selectedAverage");
+  const currentLanguage = () => localStorage.getItem("selectedLanguage");
   const [selectedLanguage, setSelectedLanguage] = useState(currentLanguage());
 
   const handleChange = (event) => {
@@ -20,9 +20,7 @@ export const LanguageSelection = ({ setLanguage }) => {
   };
 
   useEffect(() => {
-    if (typeof selectedAverage === "number") {
-      localStorage.setItem("selectedAverage", selectedLanguage.toString());
-    }
+      localStorage.setItem("selectedLanguage", selectedLanguage.toString());
   }, [selectedLanguage]);
 
   return (
@@ -34,7 +32,7 @@ export const LanguageSelection = ({ setLanguage }) => {
         alignItems="center"
       >
         <Typography variant="body1">
-          Select
+          Select your language.
         </Typography>
         <FormControl
           sx={{
@@ -50,7 +48,7 @@ export const LanguageSelection = ({ setLanguage }) => {
             onChange={handleChange}
             label="Language"
           >
-            {worldLanguages.map(language => <MenuItem value={language["name"]}>{language["name"]}</MenuItem>)}
+            {worldLanguages.map(language => <MenuItem key={language["code"]} value={language["name"]}>{language["name"]}</MenuItem>)}
           </Select>
         </FormControl>
         <Button
