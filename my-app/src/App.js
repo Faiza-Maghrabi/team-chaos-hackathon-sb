@@ -1,20 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import { UploadButton } from "./ButtonTemp"
-
-
+import { SelectedLanguage } from './components/SelectedLanguage';
 function App() {
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          hii
-        </p>
-        <UploadButton />
-      </header>
-    </div>
+    <SelectedLanguage/>
+    <UploadButton />
   );
 }
 
