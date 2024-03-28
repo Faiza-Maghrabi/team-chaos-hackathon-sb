@@ -1,8 +1,8 @@
 import './App.css';
-import { LanguageSelection } from './components/LanguageSelection';
+import { SelectedLanguage } from './components/SelectedLanguage';
 function App() {
   return (
-    <LanguageSelection/>
+    <SelectedLanguage/>
   );
 }
 

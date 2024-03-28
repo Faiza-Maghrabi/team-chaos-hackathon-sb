@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -10,20 +10,13 @@ import Paper from "@mui/material/Paper";
 import PropTypes from "prop-types";
 import { worldLanguages } from "../utils/languages";
 
-export const LanguageSelection = ({ setLanguage }) => {
-  const currentLanguage = () => localStorage.getItem("selectedAverage");
-  const [selectedLanguage, setSelectedLanguage] = useState(currentLanguage());
+export const LanguageSelection = ({ language, setLanguage }) => {
+  const [selectedLanguage, setSelectedLanguage] = useState(undefined);
 
   const handleChange = (event) => {
-    const language = event.target.value;
-    setSelectedLanguage(language);
+    const selectedLanguage = event.target.value;
+    setSelectedLanguage(selectedLanguage);
   };
-
-  useEffect(() => {
-    if (typeof selectedAverage === "number") {
-      localStorage.setItem("selectedAverage", selectedLanguage.toString());
-    }
-  }, [selectedLanguage]);
 
   return (
     <Paper elevation={24} sx={{ padding:"24px"}}>                       
@@ -34,7 +27,7 @@ export const LanguageSelection = ({ setLanguage }) => {
         alignItems="center"
       >
         <Typography variant="body1">
-          Select
+          Select your language.
         </Typography>
         <FormControl
           sx={{
@@ -50,7 +43,7 @@ export const LanguageSelection = ({ setLanguage }) => {
             onChange={handleChange}
             label="Language"
           >
-            {worldLanguages.map(language => <MenuItem value={language["name"]}>{language["name"]}</MenuItem>)}
+            {worldLanguages.map(language => <MenuItem key={language["code"]} value={language["name"]}>{language["name"]}</MenuItem>)}
           </Select>
         </FormControl>
         <Button
