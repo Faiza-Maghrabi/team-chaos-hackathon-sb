@@ -3,8 +3,6 @@ import { LanguageSelection } from "./LanguageSelection";
 import { Questions } from "./Questions";
 import Box from "@mui/material/Box";
 
-// const currentLanguage = () => localStorage.getItem("selectedLanguage");
-
 export const SelectedLanguage = () => {
   const [language, setLanguage] = useState(undefined);
 
